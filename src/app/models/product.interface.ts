@@ -1,12 +1,16 @@
+import {ProductImage} from './product-image.interface';
+import {ProductCategory} from './product-category.interface';
+
 export interface Product {
   id: number;
+  name: string;
   description: string;
   price: number;
   quantity: number;
-  category: object;
+  category: ProductCategory;
   promo: boolean;
   promoPrice: number;
-  productImages: object;
+  productImages: ProductImage[];
   active: boolean;
 }
 
