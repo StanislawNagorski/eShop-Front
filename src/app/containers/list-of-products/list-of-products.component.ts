@@ -1,4 +1,4 @@
-import {Component, OnDestroy, OnInit} from '@angular/core';
+import {Component, Input, OnDestroy, OnInit} from '@angular/core';
 import {Observable, Subscription} from 'rxjs';
 import {Product} from '../../models/product.interface';
 import {ProductApiService} from '../../services/product-api.service';
@@ -12,6 +12,7 @@ import {take} from 'rxjs/operators';
 export class ListOfProductsComponent implements OnInit, OnDestroy {
   subscriptions$: Subscription;
   products$: Observable<Product[]>;
+  @Input() type = 'product-list';
 
   constructor( private productApiService: ProductApiService) {}
 
@@ -26,5 +27,7 @@ export class ListOfProductsComponent implements OnInit, OnDestroy {
   ngOnDestroy(): void {
     this.subscriptions$.unsubscribe();
   }
+
+
 
 }

@@ -1,18 +1,22 @@
 $width: 250px;
 
-.view{
-  width: $width;
+@mixin flex($margin) {
   display: flex;
-  margin: 10px;
+  margin: $margin;
 }
 
-.product-view {
+.view{
+  @include flex(10px);
+}
+
+.product-list-view {
   flex-direction: column;
+  width: $width;
+  img {
+    height: $width;
+  }
 }
 
-img {
-  height: $width;
-}
 
 .thumbnail img {
   width: 100px;

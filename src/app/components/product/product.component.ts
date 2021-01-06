@@ -15,6 +15,7 @@ export class ProductComponent implements OnInit {
 
   ngOnInit(): void {
   }
+
   onClickGoToProductPage(product: Product): void{
     this.goToPage.emit(product);
   }
